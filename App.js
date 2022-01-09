@@ -1,44 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Footer from './src/components/Footer';
 import TodoList from './src/components/TodoList';
 import Header from './src/components/Header';
 import Constants from 'expo-constants';
 import { TodosContext } from './src/contexts/TodosContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const TODOS_STORAGE_KEY = '@TodoStorageKeyBwPx0r9Ou2';
 
 export default function App() {
-  const [todos, setTodos] = useState([
-    {
-      key: 1,
-      name: 'Todo 1',
-      description:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?',
-    },
-    {
-      key: 2,
-      name: 'Todo 2',
-      description:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?',
-    },
-    {
-      key: 3,
-      name: 'Todo 3',
-      description:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?',
-    },
-    {
-      key: 4,
-      name: 'Todo 4',
-      description:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?',
-    },
-    {
-      key: 5,
-      name: 'Todo 5',
-      description:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?',
-    },
-  ]);
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  useEffect(() => {
+    storeData(todos);
+  }, [todos]);
+
+  const getData = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem(TODOS_STORAGE_KEY);
+      const todosArray = jsonValue != null ? JSON.parse(jsonValue) : null;
+      setTodos(todosArray);
+    } catch (e) {
+      // error reading value
+      alert('Failed to load Todo');
+    }
+  };
+
+  const storeData = async (value) => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem(TODOS_STORAGE_KEY, jsonValue);
+    } catch (e) {
+      // saving error
+      alert('Failed to store Todo');
+    }
+  };
 
   return (
     <View style={styles.container}>
