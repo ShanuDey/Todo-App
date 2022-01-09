@@ -2,11 +2,14 @@
   "name": "todo-app",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
+  "homepage": "http://ShanuDey.github.io/Todo-App",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "predeploy": "expo build:web",
+    "deploy": "gh-pages -d web-build",
     "eject": "expo eject"
   },
   "dependencies": {
@@ -22,6 +25,7 @@
     "@babel/core": "^7.12.9",
     "@react-native-community/eslint-config": "^3.0.1",
     "eslint": "^8.6.0",
+    "gh-pages": "^3.2.3",
     "prettier": "^2.5.1"
   },
   "private": true

@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Todo-App",
+    "name": "Todo App",
     "slug": "Todo-App",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Todo App for Android, iOS and Web",
+    "githubUrl": "https://github.com/ShanuDey/Todo-App"
   }
 }
