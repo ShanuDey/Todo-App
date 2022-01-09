@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import { TodosContext } from '../../contexts/TodosContext';
 
 export default function Header(props) {
+  const { todos, setTodos } = useContext(TodosContext);
+
+  function handleDeleteTodo() {
+    setTodos(todos.filter((currTodo) => currTodo.key !== props.todo.key));
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{props.todo.name}</Text>
-      <Button style={styles.button} title='x' />
+      <Button style={styles.button} title='x' onPress={handleDeleteTodo} />
     </View>
   );
 }
