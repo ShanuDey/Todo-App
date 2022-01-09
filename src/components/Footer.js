@@ -8,16 +8,19 @@ export default function Footer() {
   const [newTodo, setNewTodo] = useState('');
 
   function addTodoHandler() {
-    let currentName =
-      newTodo.length <= 10 ? newTodo : `${newTodo.substring(0, 10)}...`;
-    setTodos([
-      {
-        key: uuidv4(),
-        name: currentName,
-        description: newTodo,
-      },
-      ...todos,
-    ]);
+    if (newTodo !== '') {
+      let currentName =
+        newTodo.length <= 10 ? newTodo : `${newTodo.substring(0, 10)}...`;
+      setTodos([
+        {
+          key: uuidv4(),
+          name: currentName,
+          description: newTodo,
+        },
+        ...todos,
+      ]);
+      setNewTodo('');
+    }
   }
 
   return (
@@ -25,6 +28,7 @@ export default function Footer() {
       <TextInput
         placeholder='Type your Todo here'
         style={styles.input}
+        value={newTodo}
         onChangeText={(text) => setNewTodo(text)}
       />
       <Button title='Add' style={styles.button} onPress={addTodoHandler} />
