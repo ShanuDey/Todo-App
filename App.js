@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import Footer from './src/components/Footer';
 import TodoList from './src/components/TodoList';
 import Header from './src/components/Header';
@@ -59,6 +59,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: Constants.statusBarHeight,
+    marginLeft: Platform.OS !== 'web' ? 10 : '10%',
+    marginRight: Platform.OS !== 'web' ? 10 : '10%',
     alignItems: 'stretch',
   },
 });

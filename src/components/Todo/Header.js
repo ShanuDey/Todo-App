@@ -20,9 +20,9 @@ export default function Header(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
+    flexDirection: 'row',
   },
   text: {
     flex: 2,
@@ -31,5 +31,7 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
   },
 });
