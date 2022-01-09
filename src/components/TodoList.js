@@ -10,7 +10,7 @@ export default function TodoList() {
     <View style={styles.container}>
       <ScrollView>
         {todos.map((todo) => (
-          <Todo todo={todo} />
+          <Todo todo={todo} key={todo.key.toString()} />
         ))}
       </ScrollView>
     </View>
