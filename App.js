@@ -23,7 +23,7 @@ export default function App() {
   const getData = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem(TODOS_STORAGE_KEY);
-      const todosArray = jsonValue != null ? JSON.parse(jsonValue) : null;
+      const todosArray = jsonValue != null ? JSON.parse(jsonValue) : [];
       setTodos(todosArray);
     } catch (e) {
       // error reading value
