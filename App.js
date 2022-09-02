@@ -6,6 +6,7 @@ import Header from './src/components/Header';
 import Constants from 'expo-constants';
 import { TodosContext } from './src/contexts/TodosContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import LoginPage from './src/components/Login/LoginPage';
 
 const TODOS_STORAGE_KEY = '@TodoStorageKeyBwPx0r9Ou2';
 
@@ -43,11 +44,12 @@ export default function App() {
 
   return (
     <View style={styles.container} accessibilityLabel="TodoAppView">
-      <Header />
+      {/* <Header />
       <TodosContext.Provider value={{ todos, setTodos }}>
         <TodoList />
         <Footer />
-      </TodosContext.Provider>
+      </TodosContext.Provider> */}
+      <LoginPage/>
     </View>
   );
 }
