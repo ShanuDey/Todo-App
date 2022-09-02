@@ -13,12 +13,22 @@ export default ({navigation}) => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      username: "",
+      password: "",
     },
   });
   const onSubmit = (data) => {
-    console.log(data);
+    if(data.username === 'todouser' && data.password === 'todopassword'){
+      navigation.navigate('Todo List')
+    }else{
+      Alert.alert(
+        "Login Failed",
+        "Wrong Username and Password",
+        [
+          { text: "Try Again", onPress: () => console.log("Login failed try again") }
+        ]
+      );
+    }
   };
 
   const onChange = (arg) => {
@@ -31,7 +41,6 @@ export default ({navigation}) => {
 
   return (
     <View style={styles.container}>
-        <Text style={styles.headerText}>Login Page</Text>
       <Text style={styles.label}>Username</Text>
       <Controller
         control={control}
@@ -66,8 +75,7 @@ export default ({navigation}) => {
         <Button
           style={styles.buttonInner}
           title="Login"
-          // onPress={handleSubmit(onSubmit)}
-          onPress={() => navigation.navigate('TodoList')}
+          onPress={handleSubmit(onSubmit)}
         />
       </View>
 
@@ -112,11 +120,5 @@ const styles = StyleSheet.create({
     height: 40,
     padding: 10,
     borderRadius: 4,
-  },
-  headerText: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: '#30756d',
-    alignSelf:"center"
   },
 });
