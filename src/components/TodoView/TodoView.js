@@ -42,7 +42,7 @@ export default function Todoview() {
   };
   return (
     <View style={styles.container}>
-      <Header />
+      {/* <Header /> */}
       <TodosContext.Provider value={{ todos, setTodos }}>
         <TodoList />
         <Footer />
@@ -57,9 +57,9 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: Constants.statusBarHeight,
-      marginLeft: Platform.OS !== 'web' ? 10 : '10%',
-      marginRight: Platform.OS !== 'web' ? 10 : '10%',
+      // marginTop: Constants.statusBarHeight,
+      // marginLeft: Platform.OS !== 'web' ? 10 : '10%',
+      // marginRight: Platform.OS !== 'web' ? 10 : '10%',
       alignItems: 'stretch',
     },
   });
