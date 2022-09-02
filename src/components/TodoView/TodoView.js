@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Platform } from "react-native";
 import Constants from 'expo-constants';
-import Header from "./Header";
 import Footer from "./Footer";
 import TodoList from "./TodoList";
 import { TodosContext } from "../../contexts/TodosContext"

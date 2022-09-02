@@ -11,7 +11,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" component={LoginPage} />
-        <Stack.Screen name="TodoList" component={TodoView} />
+        <Stack.Screen name="Todo List" component={TodoView} />
       </Stack.Navigator>
     </NavigationContainer>
   );
