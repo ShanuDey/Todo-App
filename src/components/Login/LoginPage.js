@@ -50,6 +50,7 @@ export default ({navigation}) => {
             onBlur={onBlur}
             onChangeText={(value) => onChange(value)}
             value={value}
+            accessibilityLabel="tUsernameTextInput"
           />
         )}
         name="username"
@@ -65,6 +66,7 @@ export default ({navigation}) => {
             onBlur={onBlur}
             onChangeText={(value) => onChange(value)}
             value={value}
+            accessibilityLabel="tPasswordTextInput"
           />
         )}
         name="password"
@@ -76,6 +78,7 @@ export default ({navigation}) => {
           style={styles.buttonInner}
           title="Login"
           onPress={handleSubmit(onSubmit)}
+          accessibilityLabel="tLoginButton"
         />
       </View>
 
@@ -83,6 +86,7 @@ export default ({navigation}) => {
         <Button
           style={styles.buttonInner}
           title="Reset"
+          accessibilityLabel="tResetButton"
           onPress={() => {
             reset({
               username: "todouser",
