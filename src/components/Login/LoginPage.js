@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, TextInput, Button, Alert } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import Constants from "expo-constants";
 
-export default () => {
+export default ({navigation}) => {
   const {
     register,
     setValue,
@@ -66,7 +66,8 @@ export default () => {
         <Button
           style={styles.buttonInner}
           title="Login"
-          onPress={handleSubmit(onSubmit)}
+          // onPress={handleSubmit(onSubmit)}
+          onPress={() => navigation.navigate('TodoList')}
         />
       </View>
 

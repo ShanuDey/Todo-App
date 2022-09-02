@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { View, StyleSheet, TextInput, Button } from 'react-native';
-import { TodosContext } from '../contexts/TodosContext';
+import { TodosContext } from '../../contexts/TodosContext';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function Footer() {

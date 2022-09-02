@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
-import { TodosContext } from '../contexts/TodosContext';
-import Todo from './Todo/Todo';
+import { TodosContext } from '../../contexts/TodosContext';
+import Todo from '../Todo/Todo';
 
 export default function TodoList() {
   const { todos, setTodos } = useContext(TodosContext);
