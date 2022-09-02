@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function Body(props) {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} accessibilityLabel="TodoBodyView">
       <Text>{props.todo.description}</Text>
     </View>
   );

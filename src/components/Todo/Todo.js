@@ -4,7 +4,7 @@ import Body from './Body';
 
 export default function Todo(props) {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} accessibilityLabel={props.todo.key}>
       <Header todo={props.todo} />
       <Body todo={props.todo} />
     </View>

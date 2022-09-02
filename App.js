@@ -42,7 +42,7 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} accessibilityLabel="TodoAppView">
       <Header />
       <TodosContext.Provider value={{ todos, setTodos }}>
         <TodoList />

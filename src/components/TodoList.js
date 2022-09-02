@@ -7,7 +7,7 @@ export default function TodoList() {
   const { todos, setTodos } = useContext(TodosContext);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} accessibilityLabel="TodoListContainer">
       <ScrollView>
         {todos.map((todo) => (
           <Todo todo={todo} key={todo.key.toString()} />

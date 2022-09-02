@@ -10,9 +10,9 @@ export default function Header(props) {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{props.todo.name}</Text>
-      <Button style={styles.button} title='x' onPress={handleDeleteTodo} />
+    <View style={styles.container} accessibilityLabel="TodoHeaderView">
+      <Text style={styles.text} accessibilityLabel="TodoHeaderText">{props.todo.name}</Text>
+      <Button style={styles.button} title='x' onPress={handleDeleteTodo} accessibilityLabel="TodoHeaderDeleteButton"/>
     </View>
   );
 }

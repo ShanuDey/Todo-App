@@ -29,9 +29,10 @@ export default function Footer() {
         placeholder='Type your Todo here'
         style={styles.input}
         value={newTodo}
+        accessibilityLabel="AddTodoTextInput"
         onChangeText={(text) => setNewTodo(text)}
       />
-      <Button title='Add' style={styles.button} onPress={addTodoHandler} />
+      <Button title='Add' style={styles.button} onPress={addTodoHandler} accessibilityLabel="TodoFooterAddButton"/>
     </View>
   );
 }
