@@ -24,14 +24,20 @@ export default ({ navigation }) => {
           text: "Ok",
           onPress: () => {
             navigation.navigate("Todo List");
-            console.log("Login successful");
+            console.log("Login successful and redirect to Todo View");
+          },
+        },
+        {
+          text: "Cancel",
+          onPress: () => {
+            console.log("Login successful but cancel to redirect");
           },
         },
       ]);
     } else {
       Alert.alert("Login Failed", "Wrong Username and Password", [
         {
-          text: "Try Again",
+          text: "Cancel",
           onPress: () => console.log("Login failed try again"),
         },
       ]);
