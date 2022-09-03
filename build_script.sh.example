@@ -1,0 +1,9 @@
+expo publish
+EXPO_ANDROID_KEYSTORE_PASSWORD="YOUR_PASSWORD" \
+EXPO_ANDROID_KEY_PASSWORD="YOUR_PASSWORD" \
+turtle build:android \
+  --type apk \
+  --keystore-path ./path-to-keystore/keystore.jks \
+  --keystore-alias "keyalias" \
+  --allow-non-https-public-url \
+  --public-url  https://exp.host/@shanudey/Todo-App/index.exp?sdkVersion=44.0.0
