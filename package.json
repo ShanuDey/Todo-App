@@ -10,6 +10,7 @@
     "web": "expo start --web",
     "predeploy": "expo build:web",
     "deploy": "gh-pages -d web-build",
+    "apk": "expo build:android -t apk",
     "eject": "expo eject"
   },
   "dependencies": {
