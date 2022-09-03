@@ -40,7 +40,7 @@ export default ({navigation}) => {
   console.log("errors", errors);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} accessibilityLabel="tLoginPageView">
       <Text style={styles.label}>Username</Text>
       <Controller
         control={control}

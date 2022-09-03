@@ -40,7 +40,7 @@ export default function Todoview() {
     }
   };
   return (
-    <View style={styles.container}>
+    <View style={styles.container} accessibilityLabel="tTodoPageView">
       {/* <Header /> */}
       <TodosContext.Provider value={{ todos, setTodos }}>
         <TodoList />
